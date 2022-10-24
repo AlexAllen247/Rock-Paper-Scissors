@@ -1,5 +1,5 @@
 let playerCount = 0
-let coumputerCount = 0
+let computerCount = 0
 let winner = ""
 
 function getComputerChoice() {
@@ -24,10 +24,21 @@ function playRound(playerSelection, computerSelection) {
         playerCount++
         winner = "Player"
     } else {
-        coumputerCount++
+        computerCount++
         winner = "Computer"
     }
 }
 function game() {
-    
+    for (i = 1; i <= 5; i++) {
+        console.log(playRound(prompt('Select: ROCK | PAPER | SCISSORS'), getComputerChoice()))
+    }
+    if (playerCount > computerCount) {
+        return "You won! :D"
+    } else if (playerCount < computerCount) {
+        return "You lost :("
+    } else {
+        return 'It\'s a tie :/'
+    }
 }
+
+console.log(game())
